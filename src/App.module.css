@@ -13,6 +13,7 @@
   justify-content: center;
   align-items: center; /* Tambahkan ini untuk menyelaraskan tombol dan input secara vertikal */
   margin-bottom: 20px;
+  position: relative;
 }
 
 .searchInput {
@@ -45,6 +46,8 @@
   max-height: 150px;
   overflow-y: auto;
   z-index: 1;
+  bottom: -180px;
+  left: 363px;
 }
 
 .suggestionItem {
