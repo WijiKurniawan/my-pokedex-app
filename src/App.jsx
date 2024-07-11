@@ -66,20 +66,21 @@ const App = () => {
         <button onClick={handleSearch} className={styles.searchButton}>
           Search
         </button>
+        {suggestions.length > 0 && (
+          <ul className={styles.suggestionsList}>
+            {suggestions.map((suggestion) => (
+              <li
+                key={suggestion.name}
+                onClick={() => handleSuggestionClick(suggestion.name)}
+                className={styles.suggestionItem}
+              >
+                {suggestion.name}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      {suggestions.length > 0 && (
-        <ul className={styles.suggestionsList}>
-          {suggestions.map((suggestion) => (
-            <li
-              key={suggestion.name}
-              onClick={() => handleSuggestionClick(suggestion.name)}
-              className={styles.suggestionItem}
-            >
-              {suggestion.name}
-            </li>
-          ))}
-        </ul>
-      )}
+
       <div className={styles.container}>
         {filteredPokemon.map((item) => (
           <Item name={item.name} url={item.url} key={item.name} />
